@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Data Anggota Perpustakaan</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('title', 'Data Anggota Perpustakaan')
+
+@section('content')
     <h1>Data Anggota Perpustakaan</h1>
 
     @if (session('success'))
@@ -67,5 +64,4 @@
     </table>
 
     <p>{{ $members->links() }}</p>
-</body>
-</html>
+@endsection

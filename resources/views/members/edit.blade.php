@@ -1,11 +1,8 @@
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <title>Edit Anggota</title>
-</head>
-<body>
+@section('title', 'Edit Anggota')
+
+@section('content')
     <h1>Edit Anggota</h1>
 
     @if ($errors->any())
@@ -52,5 +49,4 @@
         <button type="submit">Simpan Perubahan</button>
         <a href="{{ route('members.index') }}">Kembali</a>
     </form>
-</body>
-</html>
+@endsection
