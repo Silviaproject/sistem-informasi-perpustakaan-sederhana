@@ -11,6 +11,18 @@ class Borrowing extends Model
 
     protected $guarded = ['id'];
 
+    protected $casts = [
+        'borrow_date' => 'date',
+        'due_date' => 'date',
+        'return_date' => 'date',
+    ];
+
+    // Relasi ke User (Admin/Petugas yang melayani)
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     // Relasi ke Member (Tugas Anggota A)
     public function member()
     {

@@ -14,6 +14,8 @@
             <a href="{{ route('users.index') }}">Kelola User</a> |
         @endif
 
+        <a href="{{ route('categories.index') }}">Kategori</a> |
+        <a href="{{ route('books.index') }}">Buku</a> |
         <a href="{{ route('members.index') }}">Anggota</a> |
 
         <span style="margin-left: 20px;">

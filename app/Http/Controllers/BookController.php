@@ -35,6 +35,11 @@ class BookController extends Controller
         return redirect()->route('books.index')->with('success', 'Data buku berhasil ditambahkan.');
     }
 
+    public function show(Book $book)
+    {
+        $book->load('category');
+        return view('books.show', compact('book'));
+    }
     public function edit(Book $book)
     {
         $categories = Category::orderBy('name')->get();
