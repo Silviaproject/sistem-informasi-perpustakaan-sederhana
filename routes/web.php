@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+<<<<<<< HEAD
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
+=======
+>>>>>>> origin/main
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
