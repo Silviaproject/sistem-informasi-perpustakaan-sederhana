@@ -10,42 +10,27 @@
 <form action="{{ route('books.store') }}" method="POST">
     @csrf
 
-    <div>
-        <label for="category_id">Kategori Buku</label><br>
-        <select name="category_id" id="category_id">
-            <option value="">-- Pilih Kategori --</option>
-            @foreach ($categories as $category)
-                <option value="{{ $category->id }}" @selected(old('category_id') == $category->id)>
-                    {{ $category->name }}
-                </option>
-            @endforeach
-        </select>
-        @error('category_id') <p style="color:red;">{{ $message }}</p> @enderror
-    </div><br>
+    <label>Kategori:</label><br>
+    <select name="category_id" required>
+        <option value="">-- Pilih Kategori --</option>
+        @foreach ($categories as $category)
+            <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                {{ $category->name }}
+            </option>
+        @endforeach
+    </select><br><br>
 
-    <div>
-        <label for="title">Judul Buku</label><br>
-        <input type="text" name="title" id="title" value="{{ old('title') }}">
-        @error('title') <p style="color:red;">{{ $message }}</p> @enderror
-    </div><br>
+    <label>Judul Buku:</label><br>
+    <input type="text" name="title" value="{{ old('title') }}" required><br><br>
 
-    <div>
-        <label for="author">Penulis</label><br>
-        <input type="text" name="author" id="author" value="{{ old('author') }}">
-        @error('author') <p style="color:red;">{{ $message }}</p> @enderror
-    </div><br>
+    <label>Penulis:</label><br>
+    <input type="text" name="author" value="{{ old('author') }}" required><br><br>
 
-    <div>
-        <label for="year">Tahun Terbit</label><br>
-        <input type="number" name="year" id="year" value="{{ old('year') }}">
-        @error('year') <p style="color:red;">{{ $message }}</p> @enderror
-    </div><br>
+    <label>Tahun Terbit:</label><br>
+    <input type="number" name="year" value="{{ old('year') }}" required><br><br>
 
-    <div>
-        <label for="stock">Stok Buku</label><br>
-        <input type="number" name="stock" id="stock" value="{{ old('stock', 0) }}">
-        @error('stock') <p style="color:red;">{{ $message }}</p> @enderror
-    </div><br>
+    <label>Stok:</label><br>
+    <input type="number" name="stock" value="{{ old('stock', 0) }}" min="0" required><br><br>
 
     <button type="submit">Simpan</button>
 </form>
