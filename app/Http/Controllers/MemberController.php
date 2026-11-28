@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 <<<<<<< HEAD
 use Illuminate\Validation\Rule;
 =======
+<<<<<<< HEAD
+use Illuminate\Validation\Rule;
+=======
 >>>>>>> origin/fitur/anggota-b
+>>>>>>> origin/main
 
 class MemberController extends Controller
 {
@@ -17,8 +21,13 @@ class MemberController extends Controller
         $members = Member::latest()->paginate(10);
 
 =======
+<<<<<<< HEAD
+        $members = Member::latest()->paginate(10);
+
+=======
         $members = Member::all();
 >>>>>>> origin/fitur/anggota-b
+>>>>>>> origin/main
         return view('members.index', compact('members'));
     }
 
@@ -31,6 +40,9 @@ class MemberController extends Controller
     {
         $validated = $request->validate([
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
             'member_code' => 'required|string|max:50|unique:members,member_code',
             'name' => 'required|string|max:255',
             'email' => 'nullable|email|max:255|unique:members,email',
@@ -42,6 +54,8 @@ class MemberController extends Controller
             'name.required' => 'Nama anggota wajib diisi.',
             'email.email' => 'Format email tidak valid.',
             'email.unique' => 'Email sudah digunakan.',
+<<<<<<< HEAD
+=======
 =======
             'member_code' => 'required|string|unique:members,member_code',
             'name'        => 'required|string|max:255',
@@ -49,6 +63,7 @@ class MemberController extends Controller
             'phone'       => 'required|string',
             'address'     => 'required|string',
 >>>>>>> origin/fitur/anggota-b
+>>>>>>> origin/main
         ]);
 
         Member::create($validated);
@@ -57,8 +72,13 @@ class MemberController extends Controller
         return redirect()->route('members.index')
             ->with('success', 'Anggota berhasil ditambahkan.');
 =======
+<<<<<<< HEAD
+        return redirect()->route('members.index')
+            ->with('success', 'Anggota berhasil ditambahkan.');
+=======
         return redirect()->route('members.index')->with('success', 'Anggota berhasil ditambahkan.');
 >>>>>>> origin/fitur/anggota-b
+>>>>>>> origin/main
     }
 
     public function show(Member $member)
@@ -75,6 +95,9 @@ class MemberController extends Controller
     {
         $validated = $request->validate([
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
             'member_code' => [
                 'required',
                 'string',
@@ -96,6 +119,8 @@ class MemberController extends Controller
             'name.required' => 'Nama anggota wajib diisi.',
             'email.email' => 'Format email tidak valid.',
             'email.unique' => 'Email sudah digunakan.',
+<<<<<<< HEAD
+=======
 =======
             'member_code' => 'required|string|unique:members,member_code,' . $member->id,
             'name'        => 'required|string|max:255',
@@ -103,6 +128,7 @@ class MemberController extends Controller
             'phone'       => 'required|string',
             'address'     => 'required|string',
 >>>>>>> origin/fitur/anggota-b
+>>>>>>> origin/main
         ]);
 
         $member->update($validated);
@@ -111,21 +137,32 @@ class MemberController extends Controller
         return redirect()->route('members.index')
             ->with('success', 'Data anggota berhasil diperbarui.');
 =======
+<<<<<<< HEAD
+        return redirect()->route('members.index')
+            ->with('success', 'Data anggota berhasil diperbarui.');
+=======
         return redirect()->route('members.index')->with('success', 'Data anggota berhasil diperbarui.');
 >>>>>>> origin/fitur/anggota-b
+>>>>>>> origin/main
     }
 
     public function destroy(Member $member)
     {
         $member->delete();
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
 
         return redirect()->route('members.index')
             ->with('success', 'Anggota berhasil dihapus.');
     }
 }
+<<<<<<< HEAD
+=======
 =======
         return redirect()->route('members.index')->with('success', 'Anggota berhasil dihapus.');
     }
 }
 >>>>>>> origin/fitur/anggota-b
+>>>>>>> origin/main
